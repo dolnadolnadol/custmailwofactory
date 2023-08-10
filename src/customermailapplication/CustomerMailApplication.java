@@ -42,16 +42,17 @@ public class CustomerMailApplication {
         int type = inp.nextInt();
         switch(type) {
             case 1:
-                app.getCustomerTypeFromUser("Regular");
+                app.customer = CusomerFactory.createCustomer("Regular");
                 break;
             case 2:
-                app.getCustomerTypeFromUser("Mountain");
+                app.customer = CusomerFactory.createCustomer("Mountain");
                 break;
             case 3:
-                app.getCustomerTypeFromUser("Delinquent");
+                app.customer = CusomerFactory.createCustomer("Delinquent");
                 break;
             
         }
-        System.out.println(app.generateMail());        
+        System.out.println(app.generateMail());      
+        inp.close();  
     }
 }
